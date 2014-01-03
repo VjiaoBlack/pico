@@ -1,0 +1,149 @@
+/* #527578 #84978F #ADA692 #47423F #B3B1B2 */
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+html {
+	background-color: black;
+}
+
+#signup {
+	opacity: 100%; 
+}
+
+#background{
+	background-image: url("http://farm4.staticflickr.com/3317/3221568742_258076c411_o.jpg");
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	background-position: center center;
+    background-repeat: no-repeat;
+	min-width: 100%;
+	min-height: 100%;
+	//filter: blur(5px);
+
+	//-webkit-filter: blur(5px);
+	//-moz-filter: blur(5px);
+	//-o-filter: blur(5px);
+	//-ms-filter: blur(5px);
+}
+
+#outer {
+	position: absolute;
+	width: 100%;
+	margin-top: 50px;
+	text-align: center;
+}
+
+h1 {
+	font-size: 64pt;
+	font-family: Palatino;
+	color: white;
+	margin-bottom: 0px;
+	text-align: center;
+	text-shadow: -2px 2px 5px #000000;
+}
+
+h2 {
+	font-size: 48pt;
+	font-family: Palatino;
+	text-align: center;
+	color: white;
+	margin: 0;
+}
+
+h3 {
+	font-size: 16pt;
+	font-family: Didot;
+	font-weight: 200;
+	font-style: italic;
+	text-shadow: -2px 2px 2px #000000;
+	color: white;
+	text-align: center;
+	margin-top: 16px;
+}
+
+h6 {
+	font-family: Baskerville;
+	margin: 0;
+	color: white;
+	font-size: 12pt;
+	font-weight: 100;
+}
+
+button {
+	background-color: black;
+	border: 1px;
+	border-style: solid;
+	border-color: gray;
+	padding: 5px;
+}
+
+
+.signinbox {
+
+	width: 20em;
+	background-color: black;
+	padding: 3em;
+	padding-top: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+    //-webkit-mask-image: url(mask.png);
+}
+
+.inputholder {
+	margin-top: 2em;
+	margin-bottom: 1em;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+	display:inline-block;
+
+
+	border: 1px;
+	border-style: solid;
+	border-color: red;
+
+}
+
+#inputbox {
+	float: left;
+	
+	width: 80%;
+
+	border: 1px;
+	border-style: solid;
+	border-color: blue;
+
+}
+
+#buttonholder {
+	float: right;
+
+	border: 1px;
+	border-style: solid;
+	border-color: green;
+}
+
+
+input {
+	float: left;
+	font-size: 14pt;
+	font-family: Baskerville;
+	font-weight: 150;
+	text-align: center;
+	color: white;
+	background-color: black;
+	padding: 5px;
+	border: 1px;
+	border-style: solid;
+	border-color: gray;
+}

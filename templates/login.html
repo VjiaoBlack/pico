@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head> 
+		<title>pico</title>
+		<link rel="stylesheet" type="text/css" href="static/login.css"></link>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+		<script type="text/javascript" src="static/login.js"></script>
+	</head>
+
+	<body>
+		<div id="background"></div>
+
+		<div id="outer">
+			<div id="heading"> <!-- cry so hard -->
+				<h1>pico</h1>
+				<h3>A new way of social networking.</h6>
+			</div><!-- cry so hard -->
+
+			<div id="registerbox" class="signinbox">
+				<h2>sign up</h2>
+				<div class="inputholder">
+		            <form method="POST" action="/yes">
+		            	<input type="email" name="email" spellcheck='false' value="your email, please">
+		        		</input>
+		            </form>
+		        </div>
+		        <button id="isregistered"><h6>already have an account?</h6></button>
+			</div>
+
+			<div id="loginbox" class="signinbox">
+				<h2>login</h2>
+				<div class="inputholder">
+					<form method="POST" action="/main">
+						<div id="inputbox">
+			            	<input name="username" spellcheck='false' value="username">
+			            	</input>
+			            	<input type="password" name="password" value="password">
+			            	</input>
+			            </div> 	
+			            <div id="buttonholder">
+			        		<button id="loginbutton"><h3>go</h3></button>
+			        	</div>
+			       		
+					</form>
+
+
+
+			    </div>
+
+		        <button id="notregistered"><h6>need an account?</h6></button>
+			</div>
+
+		</div>
+	</body>
+
+</html>

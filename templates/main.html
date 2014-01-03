@@ -1,0 +1,30 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>pico</title>
+		<link rel="stylesheet" type="text/css" href="static/main.css"></link>
+	</head>
+	<body>
+		<div id="bg">
+			<img src="http://2.bp.blogspot.com/_KtOEDjqBEnk/SwiMjos5Y0I/AAAAAAAACwU/c29nwA9IcmE/s1600/spitzer+galactic+center.jpg" alt="">
+		</div>
+
+		<div id="logo">
+			<h2>pico</h2>
+		</div>
+
+		<div id="center">
+			<div id="tabsholder">
+				<button class="tabs">home</button>
+				<button class="tabs">schedule</button>
+				<button class="tabs">close friends</button>
+				<button class="tabs">time budget</button>
+			</div>
+
+			<div class="box" id="main">
+				{% block content %}{% endblock %}
+			</div>
+		</div>
+	</body>
+</html>
