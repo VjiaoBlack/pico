@@ -19,7 +19,7 @@ mail = Mail(app)
 
 @app.route('/')
 def login():
-	return render_template('login.html')
+	return render_template("home.html")
 
 @app.route('/main', methods=['POST','GET'])
 def home():
@@ -91,7 +91,7 @@ test = test)"""
 @app.route('/yes', methods=['POST', 'GET'])
 def yes():
     #if request.method=="GET":
-        return render_template('yes.html')
+        return render_template("yes.html")
 """    else:
         print request.form.keys()
         msg = Message('pico support', sender='concentratedvictory@gmail.com', recipients=[request.form['email']])
