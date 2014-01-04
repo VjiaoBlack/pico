@@ -1,16 +1,30 @@
 $("#registerbox").hide();
 $("#heading").hide();
 $("#loginbox").hide();
+$("#confirmationbox").hide();
 
 
 $(document).ready(function(){
-	$("#registerbox").hide();
+$("#registerbox").hide();
 $("#heading").hide();
 $("#loginbox").hide();
+$("#confirmationbox").hide();
 
 	$("#heading").fadeIn(1000);
-
-
+    
+    $("#registerbox input").keypress(function(e) {
+	if(e.which == 13) {
+	   	$("#registerbox").off("mouseleave mouseenter");
+		$("#registerbox").fadeOut(500);
+		$("#confirmationbox").delay(500).animate({"opacity": ".7"}, 1).fadeIn(500).mouseenter(function() {
+			$(this).stop().animate({"opacity": ".7"}, "fast");
+		});
+		$("#confirmationbox").mouseleave(function() {
+			$(this).stop().animate({"opacity": ".4"}, "fast"); 
+		}); 
+	}
+    });
+    
 	$("#registerbox").animate({"opacity": ".7"}, 1).fadeIn(1000).mouseenter(function() {
 		$(this).stop().animate({"opacity": ".7"}, "fast");
 	});

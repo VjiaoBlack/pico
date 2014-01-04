@@ -1,29 +1,7 @@
 from flask import Flask, render_template, request
 #from flask.ext.mail import Mail, Message   
 
-app = Flask(__name__)
-
-"""app.config.update(dict(
-    DEBUG = True,
-    MAIL_SERVER = 'smtp.gmail.com',
-    MAIL_PORT = 587,
-    MAIL_USE_TLS = True,
-    MAIL_USE_SSL = False,
-    MAIL_USERNAME = 'concentratedvictory@gmail.com',
-    MAIL_PASSWORD = '',
-))
-
-
-mail = Mail(app)   
 """
-
-@app.route('/')
-def login():
-	return render_template("home.html")
-
-@app.route('/main', methods=['POST','GET'])
-def home():
-    """
     user = { 'nickname': 'VjiaoBlack' }
     user1 = { 'nickname': 'earwig' }
     user2 = { 'nickname': 'infernous' }
@@ -78,8 +56,31 @@ def home():
                 'activity': 'Playing Dwarf Fortress',
                 'length': 75
             }
-        ] """
+        ]
+"""
 
+app = Flask(__name__)
+
+"""app.config.update(dict(
+    DEBUG = True,
+    MAIL_SERVER = 'smtp.gmail.com',
+    MAIL_PORT = 587,
+    MAIL_USE_TLS = True,
+    MAIL_USE_SSL = False,
+    MAIL_USERNAME = 'concentratedvictory@gmail.com',
+    MAIL_PASSWORD = '',
+))
+
+
+mail = Mail(app)   
+"""
+
+@app.route('/')
+def login():
+	return render_template("main.html")
+
+@app.route('/main', methods=['POST','GET'])
+def home():
     return render_template("main.html") 
 """,
 close_friends = close_friends,
@@ -87,6 +88,14 @@ notifications = notifications,
 schedule = schedule,
 time_budget = time_budget
 test = test)"""
+
+@app.route('/closefriends', methods=['POST', 'GET'])
+def closefriends():
+	return render_template("closefriends.html")
+
+@app.route('/timebudget', methods=['POSt', 'GET'])
+def timebudget():
+	return render_template("timebudget.html")
 
 @app.route('/yes', methods=['POST', 'GET'])
 def yes():
