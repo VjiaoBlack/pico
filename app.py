@@ -77,11 +77,11 @@ mail = Mail(app)
 
 @app.route('/')
 def login():
-	return render_template("main.html")
+    return render_template("login.html")
 
-@app.route('/main', methods=['POST','GET'])
+@app.route('/home', methods=['POST','GET'])
 def home():
-    return render_template("main.html") 
+    return render_template("home.html") 
 """,
 close_friends = close_friends,
 notifications = notifications,
@@ -93,9 +93,9 @@ test = test)"""
 def closefriends():
 	return render_template("closefriends.html")
 
-@app.route('/timebudget', methods=['POSt', 'GET'])
+@app.route('/timebudget', methods=['POST', 'GET'])
 def timebudget():
-	return render_template("timebudget.html")
+    return render_template("timebudget.html")
 
 @app.route('/yes', methods=['POST', 'GET'])
 def yes():
