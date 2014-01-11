@@ -1,23 +1,24 @@
 {% extends "main.html" %}
 
 {% block content %}
-<p>thisworks</p>
-<p>thisworks</p>
-<p>thisworks</p>
-<p>thisworks</p>
-<p>thisworks</p>
-<p>thisworks</p>
-<p>thisworks</p>
-<p>thisworks</p>
-<!--
 {% for notification in notifications %}
 <p>
     {% for user in notification.users %}
-    {{ user }} |
+    {% if loop.index > 1 %}
+        and {{ user.nickname }} 
+    {% else %}
+        {{ user.nickname }}
+    {% endif %}
+    {% if loop.index == loop.length %}
+        {% if loop.length > 1 %}
+            are
+        {% else %}
+            is
+        {% endif %}
+    {% endif %}
     {% endfor %}
-    are hosting an event, {{ notification.event }}, soon.
+    hosting an event ({{ notification.event }}) soon.
 </p>
 {% endfor %}
--->
 
 {% endblock %}

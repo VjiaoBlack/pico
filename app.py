@@ -1,65 +1,14 @@
 from flask import Flask, render_template, request
 #from flask.ext.mail import Mail, Message   
 
-"""
-    user = { 'nickname': 'VjiaoBlack' }
-    user1 = { 'nickname': 'earwig' }
-    user2 = { 'nickname': 'infernous' }
+SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
+SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
 
-    close_friends = [user1,user2]
-
-    test = "testingg"
-
-    notifications = 
-        [
-            {
-                'users': [user], 
-                'event': 'Dungeons and Dragons meetup'
-            },
-            {
-                'users': [user2],
-                'event': 'Partying'
-            },
-            {
-                'users': [user1],
-                'event': 'Hackathon'
-            },
-            {
-                'users': [user1,user2],
-                'event': 'Finals'
-            }
-        ]
-
-    schedule = 
-        [
-            {
-                'event': 'CSTUY',
-                'time_start': 'mm/dd/yy hh:mm',
-                'time_end'
-            }
-
-        ]
-
-
-
-    time_budget = 
-        [
-            {
-                'activity': 'Studying',
-                'length': 60
-            },
-            {
-                'activity': 'Exercising',
-                'length': 25
-            },
-            {
-                'activity': 'Playing Dwarf Fortress',
-                'length': 75
-            }
-        ]
-"""
 
 app = Flask(__name__)
+db = SQLAlchemy(app)
+
+from app import views, models
 
 """app.config.update(dict(
     DEBUG = True,
@@ -81,13 +30,63 @@ def login():
 
 @app.route('/home', methods=['POST','GET'])
 def home():
-    return render_template("home.html") 
-""",
-close_friends = close_friends,
-notifications = notifications,
-schedule = schedule,
-time_budget = time_budget
-test = test)"""
+    user = { 'nickname': 'VjiaoBlack' }
+    user1 = { 'nickname': 'earwig' }
+    user2 = { 'nickname': 'infernous' }
+
+    close_friends = [user1,user2]
+
+    test = "testingg"
+
+    notifications = [
+            {
+                'users': [user], 
+                'event': 'Dungeons and Dragons meetup'
+            },
+            {
+                'users': [user2],
+                'event': 'Partying'
+            },
+            {
+                'users': [user1],
+                'event': 'Hackathon'
+            },
+            {
+                'users': [user1,user2],
+                'event': 'Finals'
+            }
+        ]
+
+    schedule = [
+            {
+                'event': 'CSTUY',
+                'time_start': 'mm/dd/yy hh:mm',
+                'time_end': 'mm/dd/yy hh:mm'
+            }
+        ]
+
+
+
+    time_budget = [
+            {
+                'activity': 'Studying',
+                'length': 60
+            },
+            {
+                'activity': 'Exercising',
+                'length': 25
+            },
+            {
+                'activity': 'Playing Dwarf Fortress',
+                'length': 75
+            }
+        ]
+    return render_template("home.html",
+        close_friends = close_friends,
+        notifications = notifications,
+        schedule = schedule,
+        time_budget = time_budget,
+        test = test)
 
 @app.route('/closefriends', methods=['POST', 'GET'])
 def closefriends():
