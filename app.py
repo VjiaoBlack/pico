@@ -1,12 +1,7 @@
 from flask import Flask, render_template, request
 #from flask.ext.mail import Mail, Message   
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
-SQLALCHEMY_MIGRATE_REPO = os.path.join(basedir, 'db_repository')
-
-
 app = Flask(__name__)
-db = SQLAlchemy(app)
 
 from app import views, models
 
