@@ -23,63 +23,15 @@ def login():
 
 @app.route('/home', methods=['POST','GET'])
 def home():
-    user = { 'nickname': 'VjiaoBlack' }
-    user1 = { 'nickname': 'earwig' }
-    user2 = { 'nickname': 'infernous' }
+    dp = open("foo.txt", "r+")
+    data = dp.read()
+    exec data
+    dp.close
 
-    close_friends = [user1,user2]
-
-    test = "testingg"
-
-    notifications = [
-            {
-                'users': [user], 
-                'event': 'Dungeons and Dragons meetup'
-            },
-            {
-                'users': [user2],
-                'event': 'Partying'
-            },
-            {
-                'users': [user1],
-                'event': 'Hackathon'
-            },
-            {
-                'users': [user1,user2],
-                'event': 'Finals'
-            }
-        ]
-
-    schedule = [
-            {
-                'event': 'CSTUY',
-                'time_start': 'mm/dd/yy hh:mm',
-                'time_end': 'mm/dd/yy hh:mm'
-            }
-        ]
-
-
-
-    time_budget = [
-            {
-                'activity': 'Studying',
-                'length': 60
-            },
-            {
-                'activity': 'Exercising',
-                'length': 25
-            },
-            {
-                'activity': 'Playing Dwarf Fortress',
-                'length': 75
-            }
-        ]
     return render_template("home.html",
-        close_friends = close_friends,
         notifications = notifications,
         schedule = schedule,
-        time_budget = time_budget,
-        test = test)
+        time_budget = time_budget)
 
 @app.route('/closefriends', methods=['POST', 'GET'])
 def closefriends():

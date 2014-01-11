@@ -1,0 +1,87 @@
+Users = [
+	{
+		'id': 1,
+		'nickname': "VjiaoBlack",
+		'email': "VjiaoBlack@gmail.com",
+		'role': 1
+	},
+	{   
+		'id': 2,
+		'nickname': "earwig",
+		'email': "ben.kurtovic@gmail.com",
+		'role': 0
+	},
+	{
+		'id': 3,
+		'nickname': "infernous",
+		'email': "infernousrabb@gmail.com",
+		'role': 0
+	}
+]
+
+Messages = [
+	{
+		'id': 1,
+		'body': "Hey, Earwig! What's up?",
+		'timestamp': "10/22/2013 5:32:10 PM",
+		'authorid': 1
+	},
+	{
+		'id': 2,
+		'body': "Nothing much. What about you?",
+		'timestamp': "10/22/2013 5:33:53 PM",
+		'authorid': 2
+	}
+]
+
+Events = [
+	{
+		'id': 1,
+		'name': "Study Session",
+		'descrition': "We should probably study for the compsci final. Let's do it together!",
+		'authorids': [1,2]
+	}
+
+]
+
+notifications = [
+	{
+    	'users': [Users[0]], 
+		'event': 'Dungeons and Dragons meetup'
+	},
+	{
+		'users': [Users[2]],
+		'event': 'Partying'
+	},
+	{
+		'users': [Users[1]],
+		'event': 'Hackathon'
+	},
+	{
+		'users': [Users[0],Users[1]],
+		'event': 'Finals'
+	}
+]
+
+schedule = [
+	{
+		'event': 'CSTUY',
+		'time_start': 'mm/dd/yy hh:mm',
+		'time_end': 'mm/dd/yy hh:mm'
+	}
+]
+
+time_budget = [
+	{
+		'activity': 'Studying',
+		'length': 60
+	},
+	{
+		'activity': 'Exercising',
+		'length': 25
+	},
+	{
+		'activity': 'Playing Dwarf Fortress',
+		'length': 75
+	}
+]
