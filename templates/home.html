@@ -2,7 +2,7 @@
 
 {% block content %}
 {% for notification in notifications %}
-<p>
+<div>
     {% for user in notification.users %}
     {% if loop.index > 1 %}
         and {{ user.nickname }} 
@@ -18,7 +18,7 @@
     {% endif %}
     {% endfor %}
     hosting an event ({{ notification.event }}) soon.
-</p>
+</div>
 {% endfor %}
 
 {% endblock %}

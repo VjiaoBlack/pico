@@ -1,3 +1,12 @@
+#main {
+    overflow-x: scroll;
+    white-space: nowrap;
+    min-height: 500px;
+}
+#main div {
+    display: inline-block;
+}
+
 #bg {
 	position: fixed; 
 	top: -50%; 
@@ -70,7 +79,6 @@ html, body {
 	color: white;
 	background-color: rgba(0,0,0,0.5);
 	padding: 20px;
- 
 	height:auto !important;  
 
 	moz-box-shadow:    0px 0px 50px 50px rgba(0,0,0,0.5);
@@ -92,19 +100,17 @@ a {
 
 button:hover {
      
-    border-color: );
-	float: right;
-	padding: 10px;
-	margin: 5px;
-	font-family: Baskerville;
-	position: relative;
-	font-size: 12pt;
+     float: right;	
+     padding: 10px;
+     margin: 5px;
+     font-family: Baskerville;	
+     position: relative;
+     font-size: 12pt;
+     border-style: solid;
+     border-width: 1px;
+     background-color: gray;
 
-	border-style: solid;
-	border-color: gray;
-	border-width: 1px;
 }
-
 
 #logo {
 	position: absolute;
@@ -155,14 +161,6 @@ p {
 }
 
 a {
-
     text-decoration:none;
     color: white;
-
-}
-
-button:hover {
-     
-    background-color: gray;
-
 }
