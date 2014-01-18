@@ -1,7 +1,15 @@
-from flask import Flask, render_template, request
+import datetime
+from flask import Flask, render_template, request, redirect, url_for
+from pymongo import MongoClient
 #from flask.ext.mail import Mail, Message   
 
 app = Flask(__name__)
+client = MongoClient('localhost', 27017)
+
+testdb = client['test-database']
+testusers = testdb['test-users']
+
+databases = ['notificationdb']#, scheduledb, timebudgetdb']
 
 """app.config.update(dict(
     DEBUG = True,
@@ -17,21 +25,62 @@ app = Flask(__name__)
 mail = Mail(app)   
 """
 
+"""
+To make a user, you input your email. The email then gives you a key
+that you input in the "new user" page (whose link is hidden and only
+    accessible directly or 
+
+"""
+
+
 @app.route('/')
 def login():
     return render_template("login.html")
 
 @app.route('/home', methods=['POST','GET'])
 def home():
+
+    valid = False
+
+    username = request.form['username']
+    password = request.form['password']
+
+    c = testusers.find({ "username": username, "password": password})
+
+    user = next(c, None)
+    if user:
+        valid = True
+
+    # woah, txt file database magic here
+    """
     dp = open("foo.txt", "r+")
     data = dp.read()
     exec data
     dp.close
+    """
+    # such magic
+    notifications = []
 
-    return render_template("home.html",
-        notifications = notifications,
-        schedule = schedule,
-        time_budget = time_budget)
+    if valid:
+        for dbname in databases:
+            cursor = testdb[dbname].find()
+            if dbname == "notificationdb":
+                for notification in cursor:
+                    notifications.append(notification)
+            #elif dbname == "schedule":
+            #    for scheduleevents in cursor:
+            #        schedule.append(scheduleevents)
+            #elif dbname == "time_budget":
+            #    for timeevents in cursor:
+            #        time_budget.append(time_budget)
+
+
+    if valid:
+        print notifications
+        return render_template("home.html",
+            notifications = notifications)
+    else:
+        return redirect(url_for("login"))
 
 @app.route('/closefriends', methods=['POST', 'GET'])
 def closefriends():

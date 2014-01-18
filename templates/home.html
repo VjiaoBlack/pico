@@ -5,9 +5,9 @@
 <div>
     {% for user in notification.users %}
     {% if loop.index > 1 %}
-        and {{ user.nickname }} 
+        and {{ user }} 
     {% else %}
-        {{ user.nickname }}
+        {{ user }}
     {% endif %}
     {% if loop.index == loop.length %}
         {% if loop.length > 1 %}
