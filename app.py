@@ -52,13 +52,14 @@ def home():
         valid = True
 
     # woah, txt file database magic here
-    """
+
     dp = open("foo.txt", "r+")
     data = dp.read()
     exec data
     dp.close
-    """
+
     # such magic
+    """
     notifications = []
 
     if valid:
@@ -73,7 +74,7 @@ def home():
             #elif dbname == "time_budget":
             #    for timeevents in cursor:
             #        time_budget.append(time_budget)
-
+            """
 
     if valid:
         print notifications
