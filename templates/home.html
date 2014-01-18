@@ -1,8 +1,9 @@
 {% extends "main.html" %}
 
 {% block content %}
+<div class="box" id="main">
 {% for notification in notifications %}
-<div>
+<div class="event" style="width: {{ notification.length }}px">
     {% for user in notification.users %}
     {% if loop.index > 1 %}
         and {{ user.nickname }} 
@@ -17,8 +18,9 @@
         {% endif %}
     {% endif %}
     {% endfor %}
-    hosting an event ({{ notification.event }}) soon.
+    hosting an event ({{ notification.event }}) for {{ notification.length }} minutes soon.
 </div>
 {% endfor %}
+</div>
 
 {% endblock %}

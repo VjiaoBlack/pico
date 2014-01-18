@@ -47,19 +47,23 @@ Events = [
 notifications = [
 	{
     	'users': [Users[0]], 
-		'event': 'Dungeons and Dragons meetup'
+		'event': 'Dungeons and Dragons meetup',
+		'length': 60
 	},
 	{
 		'users': [Users[2]],
-		'event': 'Partying'
+		'event': 'Partying',
+		'length': 150
 	},
 	{
 		'users': [Users[1]],
-		'event': 'Hackathon'
+		'event': 'Hackathon',
+		'length': 180
 	},
 	{
 		'users': [Users[0],Users[1]],
-		'event': 'Finals'
+		'event': 'Finals',
+		'length': 90
 	}
 ]
 
@@ -78,10 +82,10 @@ time_budget = [
 	},
 	{
 		'activity': 'Exercising',
-		'length': 25
+		'length': 30
 	},
 	{
 		'activity': 'Playing Dwarf Fortress',
-		'length': 75
+		'length': 90
 	}
 ]
