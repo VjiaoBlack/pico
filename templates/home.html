@@ -3,12 +3,12 @@
 {% block content %}
 <div class="box" id="main">
 {% for notification in notifications %}
-<div class="event" style="width: {{ notification.length }}px">
+<div class="event" style="width: {{ notification.length * 2 }}px">
     {% for user in notification.users %}
     {% if loop.index > 1 %}
-        and {{ user }} 
+        and {{ user.nickname }} 
     {% else %}
-        {{ user }}
+        {{ user.nickname }}
     {% endif %}
     {% if loop.index == loop.length %}
         {% if loop.length > 1 %}
