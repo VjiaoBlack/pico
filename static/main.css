@@ -77,7 +77,7 @@ h2 {
 	font-family: cursive;
 	color: red;
 	font-size: 20px;
-	word-wrap: break-word;
+	white-space: normal;
 }
 
 a {

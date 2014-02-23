@@ -116,6 +116,7 @@ button {
 
 	border: 1px;
 	border-style: solid;
+
 }
 
 #inputbox {
@@ -125,6 +126,7 @@ button {
 
 	border: 1px;
 	border-style: solid;
+	border-color: blue;
 
 }
 
@@ -133,6 +135,7 @@ button {
 
 	border: 1px;
 	border-style: solid;
+	border-color: green;
 }
 
 
