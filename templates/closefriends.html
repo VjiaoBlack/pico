@@ -1,5 +1,33 @@
 {% extends "main.html" %}
 
-{% block closefriends %}
-<p>closefriends</p>
+{% block content %}
+<div class="box" id="main">
+{% for notification in notifications %}
+<div class="event" style="width: {{ notification.length * 2 }}px">
+    {% for user in notification.users %}
+    {% if loop.index > 1 %}
+        and {{ user.nickname }} 
+    {% else %}
+        {{ user.nickname }}
+    {% endif %}
+    {% if loop.index == loop.length %}
+        {% if loop.length > 1 %}
+            are
+        {% else %}
+            is
+        {% endif %}
+    {% endif %}
+    {% endfor %}
+    hosting an event ({{ notification.event }}) for 
+	{% if notification.length % 60 == 0 %}
+		{{ notification.length / 60 }} hour(s).
+	{% elif notification.length > 60 %}
+		{{ (notification.length - (notification.length % 60)) / 60 }} hour(s) and {{ notification.length % 60 }} minutes.
+	{% else %}
+		{{ notification.length }} minutes.
+	{% endif %}
+</div>
+{% endfor %}
+</div>
+
 {% endblock %}

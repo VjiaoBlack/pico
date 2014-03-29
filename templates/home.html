@@ -21,12 +21,11 @@
     hosting an event ({{ notification.event }}) for 
 	{% if notification.length % 60 == 0 %}
 		{{ notification.length / 60 }} hour(s).
-	{% elif notification.length >= 60 %}
+	{% elif notification.length > 60 %}
 		{{ (notification.length - (notification.length % 60)) / 60 }} hour(s) and {{ notification.length % 60 }} minutes.
 	{% else %}
-		{{ notification.length % 60 }} minutes.
+		{{ notification.length }} minutes.
 	{% endif %}
-{{ notification.length }} minutes soon.
 </div>
 {% endfor %}
 </div>

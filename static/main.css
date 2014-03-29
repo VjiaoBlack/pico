@@ -1,11 +1,11 @@
 #main {
-    overflow-x: scroll;
-	white-space: nowrap; 	
+    overflow-x: scroll; 	
     min-height: 500px;
+	white-space: no-wrap;
 }
 
 #main div {
-    display: block-inline;
+	white-space: no wrap;
 }
 
 #bg {
@@ -65,18 +65,17 @@ h2 {
 }
 
 #center {
-	width: 65%;
+	width: 100%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .event {
-	width: 1000px;
 	background-color: #0000cc;
 	font-family: cursive;
 	color: red;
 	font-size: 20px;
-	white-space: normal;
+	display: inline-block;
 }
 
 a {
